@@ -1,30 +1,25 @@
 import java.util.Random;
 
 void main() {
-    int[] Array = new int[10];
+    int[] array = new int[10];
     Random rand = new Random();
 
-    for (int i = 0; i < Array.length; i++) {
-        Array[i] = rand.nextInt(100) + 1;
-    }
+    int smallest = Integer.MAX_VALUE;
+    int largest = Integer.MIN_VALUE;
 
-    int smallest = Array[0];
-    int largest = Array[0];
+    for (int i = 0; i < array.length; i++) {
+        array[i] = rand.nextInt(100) + 1;
+        System.out.print(array[i] + " ");
 
-    for (int i = 0; i < Array.length; i++) {
-        System.out.print(Array[i] + " ");
+        if (array[i] < smallest) {
+            smallest = array[i];
+        }
+        if (array[i] > largest) {
+            largest = array[i];
+        }
     }
     System.out.println();
 
-
-    for (int i = 1; i < Array.length; i++) {
-        if (Array[i] < smallest) {
-            smallest = Array[i];
-        }
-        if (Array[i] > largest) {
-            largest = Array[i];
-        }
-    }
     System.out.println("The smallest number is: " + smallest);
     System.out.println("The largest number is: " + largest);
 
